@@ -1,0 +1,8 @@
+[Unit]
+Description=GNU Hello World startup script for KOAN training course
+
+[Service]
+ExecStart=/usr/bin/hello
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+[Match]
+Name=eth0
+
+[Network]
+Address=192.168.2.100/24
+IgnoreCarrierLoss=yes
+ConfigureWithoutCarrier=yes
+
