@@ -1,0 +1,23 @@
+software =
+{
+	version = "@@DISTRO_VERSION@@";
+
+	images: (
+	{
+		filename = "image-custom-stm32mp1.ext4.gz " ;
+		type = "raw";
+		compressed = "zlib";
+		device = "/dev/mmcblk0p9 " ;
+		sha256 = "$swupdate_get_sha256(image-custom-stm32mp1.ext4.gz)";
+	}
+	);
+
+
+	uboot: (
+	{
+		name = "verif_install" ;
+		value = "false" ;
+	}
+	);
+
+}

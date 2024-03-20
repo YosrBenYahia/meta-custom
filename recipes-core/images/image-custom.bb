@@ -8,11 +8,20 @@ LICENSE = "MIT"
 
 inherit core-image
 
+IMAGE_INSTALL:append= "\
+			swupdate \
+			swupdate-dbg \
+			swupdate-tools \
+			swupdate-www \
+			util-linux \
+			nano \
+			"
 
 IMAGE_ROOTFS_SIZE ?= "8192"
 IMAGE_ROOTFS_EXTRA_SPACE:append = "${@bb.utils.contains("DISTRO_FEATURES", "systemd", " + 4096", "", d)}"
 
-WKS_IMAGE_FSTYPES += "wic wic.bz2 wic.bmap"
+WKS_IMAGE_FSTYPES += "wic wic.bz2 wic.bmap ext4.gz"
 WKS_FILE += "stm32mp1_partitions.wks.in"
 
 ACCEPT_EULA_stm32mp1 = "1"
+
